@@ -24,6 +24,7 @@ print("\n5. The first player to get three of their \nsymbols in a row (horizonta
 print("6. If all the cells on the grid are filled and \nno player has won, the game ends in a draw.")
 input("\nPress Enter to start playing: ")
 
+
 def print_board():
     print("")
     print(" " + board[0] + " | " + board[1] + " | " + board[2] + " ")
@@ -43,7 +44,7 @@ def print_scoreboard():
 def player_move(icon):
     while True: 
         try:
-            choice = input("Enter your move (1-9) \n If you want to leave the game type 'exit': ").strip()
+            choice = input("To leave the game type 'exit' \n\nEnter your move (1-9): ").strip()
             if choice == 'exit':
                 print("Thanks for playing Tic-Tac-Toe! Have a great day.")
                 sys.exit()
