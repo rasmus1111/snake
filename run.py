@@ -9,13 +9,30 @@ player_wins = 0
 computer_wins = 0
 ties = 0
 
+print("\nWelcome to Tic-Tac-Toe, " + player_name + "!\n")
+print("The rules of the game are as follows:\n")
+print("1. The game is played on a 3x3 grid.")
+print("2. You will be 'X' and the computer will be 'O'.")
+print("3. To make a move, enter a number from 1 to 9.")
+print("4. The numbers correspond to the positions on the grid as follows:\n")
+print(" 1 | 2 | 3 ")
+print("---+---+---")
+print(" 4 | 5 | 6 ")
+print("---+---+---")
+print(" 7 | 8 | 9 ")
+print("\n5. The first player to get three of their \nsymbols in a row (horizontally, vertically, \nor diagonally) wins the game.")
+print("6. If all the cells on the grid are filled and \nno player has won, the game ends in a draw.")
+input("\nPress Enter to start playing: ")
+
 def print_board():
-    print("\n")
-    for i in range(3):
-        print(" " + board[i*3] + " | " + board[i*3 + 1] + " | " + board[i*3 + 2] + " ")
-        if i != 2:
-            print("---+---+---")
-    print("\n")
+    print("")
+    print(" " + board[0] + " | " + board[1] + " | " + board[2] + " ")
+    print("---+---+---")
+    print(" " + board[3] + " | " + board[4] + " | " + board[5] + " ")
+    print("---+---+---")
+    print(" " + board[6] + " | " + board[7] + " | " + board[8] + " ")
+    print("")
+
 
 def print_scoreboard():
     print("\nScoreboard: ")
@@ -24,9 +41,9 @@ def print_scoreboard():
     print("Ties: " + str(ties) + "\n")
 
 def player_move(icon):
-    while True:
+    while True: 
         try:
-            choice = input("Enter your move (1-9) or 'exit' to quit: ").strip()
+            choice = input("Enter your move (1-9) \n If you want to leave the game type 'exit': ").strip()
             if choice == 'exit':
                 print("Thanks for playing Tic-Tac-Toe! Have a great day.")
                 sys.exit()
@@ -68,17 +85,6 @@ def computer_move(icon):
             board[choice] = icon
             break
 
-print("Welcome to Tic-Tac-Toe, " + player_name + "!\n")
-print("The game is played on a 3x3 grid.")
-print("You will be 'X' and the computer will be 'O'.")
-print("To make a move, enter a number from 1 to 9.")
-print("The numbers correspond to the positions on the grid as follows:\n")
-print(" 1 | 2 | 3 ")
-print("---+---+---")
-print(" 4 | 5 | 6 ")
-print("---+---+---")
-print(" 7 | 8 | 9 ")
-input("Press Enter to start playing: ")
 
 while True:
     print_board()
